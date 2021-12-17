@@ -2,7 +2,7 @@
 # Script to set up static routes for M365 endpoints
 # Eric Clark
 # Last Update 12/16/21
-# Script provided as-is
+# Script provided as-is & is not supported by Cohesity
 # M365 endponts listed at https://docs.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges?view=o365-worldwide#exchange-online
 #
 # Make sure we have the latest Cohesity Module
@@ -33,7 +33,6 @@ $networks = @('13.107.140.6/32',
 '13.107.6.152/31',
 '13.107.6.171/32',
 '131.253.33.215/32',
-'132.245.0.0/16',
 '132.245.0.0/16',
 '150.171.32.0/22',
 '150.171.40.0/22',
