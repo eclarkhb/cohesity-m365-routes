@@ -13,17 +13,19 @@ Update-Module -Name “Cohesity.PowerShell”
 # Edit below with credentials for your environment
 $username = "admin"
 $password = "TechAccel1!"
+$cluster = '172.16.3.101'
+$gateway = '172.16.3.1'
+$intfgrp = "intf_group1"
+
 $secstr = New-Object -TypeName System.Security.SecureString
 $password.ToCharArray() | ForEach-Object {$secstr.AppendChar($_)}
 $cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $username, $secstr
 
 #Connect to the target cluster
-Connect-CohesityCluster -Server 172.16.3.101 -Credential ($cred)
+Connect-CohesityCluster -Server $cluster -Credential ($cred)
 #
 # List of endpoint ipv4 networks with duplicates removed 12/16/21
 #
-$gateway = '10.225.35.254'
-$intfgrp = "intf_group1"
 $networks = @('13.107.140.6/32',
 # '13.107.136.0/22',
 '13.107.18.10/31',
